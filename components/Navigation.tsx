@@ -63,26 +63,34 @@ export default function Navigation() {
         </Link>
       </header>
 
-      <div className={`${styles.overlay} ${isOpen ? styles.overlayOpen : ''}`}>
+      {/* Backdrop */}
+      <div
+        className={`${styles.backdrop} ${isOpen ? styles.backdropVisible : ''}`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Sidebar */}
+      <div className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
         <nav className={styles.nav}>
           {navLinks.map((link, i) => (
             <Link
               key={link.href}
               href={link.href}
               className={`${styles.navLink} ${pathname === link.href ? styles.navLinkActive : ''}`}
-              style={{ transitionDelay: isOpen ? `${0.1 + i * 0.08}s` : '0s' }}
+              style={{ transitionDelay: isOpen ? `${0.1 + i * 0.06}s` : '0s' }}
               id={`nav-link-${link.label.toLowerCase()}`}
             >
-              <span className={styles.navNumber}>0{i + 1}</span>
-              <span className={styles.navLabel}>{link.label}</span>
+              {link.label}
             </Link>
           ))}
         </nav>
-        <div className={styles.overlayFooter}>
-          <a href="mailto:hello@smphotography.com" className={styles.overlayEmail}>
+
+        <div className={styles.sidebarFooter}>
+          <div className={styles.sidebarDivider} />
+          <a href="mailto:hello@smphotography.com" className={styles.sidebarEmail}>
             hello@smphotography.com
           </a>
-          <div className={styles.overlaySocial}>
+          <div className={styles.sidebarSocial}>
             <a href="#" aria-label="Instagram">Instagram</a>
             <a href="#" aria-label="Facebook">Facebook</a>
             <a href="#" aria-label="Pinterest">Pinterest</a>

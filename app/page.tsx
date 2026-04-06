@@ -26,7 +26,7 @@ const featuredWork = [
 
 const testimonials = [
   {
-    quote: "The images captured the essence of our day in ways we couldn't have imagined. Every time we look at them, we're transported right back to those moments.",
+    quote: "Our session with you was more than just showing up to get 'photos' — it was like emotional therapy for us. The photos are a captured moment of our joy, pride, love, wonder and amazement.",
     name: 'Sarah & James',
     event: 'Wedding, 2025',
   },
@@ -36,7 +36,7 @@ const testimonials = [
     event: 'Corporate Gala, 2025',
   },
   {
-    quote: "You have an extraordinary gift for making people feel at ease. The candid shots are my absolute favourites.",
+    quote: "I've never been made to feel so beautiful and at ease. You have an extraordinary gift for making people feel comfortable. The candid shots are my absolute favourites.",
     name: 'Emma Rodriguez',
     event: 'Birthday Celebration, 2024',
   },
@@ -60,10 +60,10 @@ export default function Home() {
         </div>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            Capturing moments
+            Honest portraiture for
             <br />
             <em>
-              <AnimatedText text="that matter" delay={800} speed={80} />
+              <AnimatedText text="your story" delay={800} speed={80} />
             </em>
           </h1>
           <p className={styles.heroSubtitle}>EVENT PHOTOGRAPHY</p>
@@ -74,96 +74,177 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className={`section ${styles.intro}`}>
-        <div className="container-narrow">
-          <ScrollReveal>
-            <p className={styles.introLabel}>WELCOME</p>
-            <h2 className={styles.introTitle}>
-              It&apos;s Lovely To <em>See You Here</em>
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <p className={styles.introText}>
-              Within these walls you will find a curated selection of event photography —
-              from intimate celebrations to grand corporate affairs. Each image tells a story,
-              each moment preserved with intention and artistry.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={300}>
-            <p className={styles.introText}>
-              My aim is to provide you with honest, emotive photographs that capture not just
-              what happened, but how it felt. If this approach speaks to you, I would be
-              honoured to hear from you.
-            </p>
-          </ScrollReveal>
+      {/* Intro Section — Asymmetric Editorial Layout */}
+      <section className={styles.intro}>
+        <div className={styles.introLayout}>
+          <div className={styles.introLeft}>
+            <ScrollReveal>
+              <p className={styles.introText}>
+                SM Photography specialises in capturing
+                the soul of your most meaningful events.
+              </p>
+              <p className={styles.introText}>
+                As an event photographer, I preserve pure and honest moments
+                that will be cherished for generations.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <blockquote className={styles.introQuote}>
+                <span className={styles.quoteMarks}>&ldquo;</span>
+                <em>For lovers of images that are timeless, authentic and full of soul — just as they should be.</em>
+              </blockquote>
+            </ScrollReveal>
+          </div>
+          <div className={styles.introRight}>
+            <ScrollReveal delay={200}>
+              <div className={styles.introImages}>
+                <div className={styles.introImg1}>
+                  <Image
+                    src="/images/wedding.png"
+                    alt="Elegant first dance"
+                    width={400}
+                    height={530}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                    sizes="(max-width: 768px) 100vw, 30vw"
+                  />
+                </div>
+                <div className={styles.introImg2}>
+                  <Image
+                    src="/images/birthday.png"
+                    alt="Joyful celebration"
+                    width={350}
+                    height={470}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Featured Work */}
-      <section className={`section ${styles.featured}`}>
-        <div className="container-wide">
+      {/* Story Section */}
+      <section className={styles.story}>
+        <div className={styles.storyLayout}>
           <ScrollReveal>
-            <p className={styles.sectionLabel}>SELECTED WORK</p>
-            <h2 className={styles.sectionTitle}>
-              Featured <em>Portfolio</em>
-            </h2>
+            <div className={styles.storyImage}>
+              <Image
+                src="/images/hero.png"
+                alt="Capturing the moment"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </ScrollReveal>
-
-          <div className={styles.featuredGrid}>
-            {featuredWork.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <Link href="/portfolio" className={styles.featuredItem}>
-                  <div className={styles.featuredImageWrapper}>
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className={styles.featuredOverlay}>
-                      <span className={styles.featuredCategory}>{item.category}</span>
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal>
-            <div className={styles.featuredCta}>
-              <Link href="/portfolio" className="btn">
-                View Full Portfolio
+          <ScrollReveal delay={200}>
+            <div className={styles.storyContent}>
+              <h2 className={styles.storyTitle}>
+                Your Story Is Worth
+                <br />
+                <em>Being Told.</em>
+              </h2>
+              <p className={styles.storyText}>
+                Event photography is a delicate dance with time, freezing memories
+                that linger forever in the heart. There is an art to preserving a moment
+                in its purest form — and here, this art form has been mastered.
+              </p>
+              <p className={styles.storyText}>
+                Through your photographs, a tiny piece of the present is woven
+                into the tapestry of the future. With meticulous care and an eye
+                for authenticity, I create photographs that reflect the uniqueness
+                of your legacy.
+              </p>
+              <Link href="/about" className={styles.storyLink}>
+                More Info
               </Link>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className={`section ${styles.testimonials}`}>
-        <div className="container">
-          <ScrollReveal>
-            <p className={styles.sectionLabel}>KIND WORDS</p>
-            <h2 className={styles.sectionTitle}>
-              What Clients <em>Say</em>
-            </h2>
-          </ScrollReveal>
+      {/* Testimonials — Flowing Carousel Style */}
+      <section className={styles.testimonials}>
+        <div className={styles.testimonialFlow}>
+          {testimonials.map((t, i) => (
+            <ScrollReveal key={i} delay={i * 200}>
+              <div className={styles.testimonialItem}>
+                <h4 className={styles.testimonialQuote}>
+                  &ldquo;{t.quote}&rdquo;
+                </h4>
+                <p className={styles.testimonialText}>
+                  {t.quote.length > 100 ? t.quote.substring(0, 100) + '...' : ''}
+                </p>
+                <div className={styles.testimonialDash} />
+                <span className={styles.testimonialAuthor}>{t.name}</span>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
 
-          <div className={styles.testimonialGrid}>
-            {testimonials.map((t, i) => (
+      {/* Services Pillars */}
+      <section className={styles.pillars}>
+        <div className="container-wide">
+          <div className={styles.pillarGrid}>
+            <ScrollReveal>
+              <div className={styles.pillar}>
+                <h3>Evocative Storytelling that Transcends Time</h3>
+                <p>Through keen artistic sensibility, I intertwine the threads of emotion, light, and composition, creating visual narratives that resonate deeply.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <div className={styles.pillar}>
+                <h3>Unparalleled Mastery of Authenticity</h3>
+                <p>Capturing unfiltered emotions and intimate moments with acute sensitivity, unveiling the intricacies of human connection.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <div className={styles.pillar}>
+                <h3>Exceptional Client Experience</h3>
+                <p>With genuine care and an unwavering commitment to exceeding expectations, the resulting photography experience becomes transformative.</p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work — Asymmetric Grid */}
+      <section className={styles.featured}>
+        <div className="container-wide">
+          <div className={styles.featuredGrid}>
+            {featuredWork.map((item, i) => (
               <ScrollReveal key={i} delay={i * 150}>
-                <div className={styles.testimonialCard}>
-                  <p className={styles.testimonialQuote}>&ldquo;{t.quote}&rdquo;</p>
-                  <div className={styles.testimonialAuthor}>
-                    <span className={styles.testimonialName}>{t.name}</span>
-                    <span className={styles.testimonialEvent}>{t.event}</span>
+                <Link href="/portfolio" className={`${styles.featuredItem} ${styles[`featuredItem${i + 1}`]}`}>
+                  <div className={styles.featuredImageWrapper}>
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                    />
                   </div>
-                </div>
+                  <div className={styles.featuredMeta}>
+                    <h3>{item.category}</h3>
+                    <span className={styles.featuredLink}>{item.category}</span>
+                  </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Signature Quote */}
+      <section className={styles.signature}>
+        <div className="container-narrow">
+          <ScrollReveal>
+            <p className={styles.signatureText}>
+              <em>… and they are beautiful, in the very skin that is them.</em>
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -171,15 +252,12 @@ export default function Home() {
       <section className={styles.cta}>
         <div className={styles.ctaInner}>
           <ScrollReveal>
-            <p className={styles.sectionLabel}>READY?</p>
-            <h2 className={styles.ctaTitle}>
-              Let&apos;s Create Something <em>Beautiful</em>
-            </h2>
+            <h2 className={styles.ctaTitle}>Let&apos;s <em>Connect</em></h2>
             <p className={styles.ctaText}>
-              Every event has a story waiting to be told. Let me help you tell yours.
+              Event photography based in Melbourne, Australia.
             </p>
-            <Link href="/contact" className="btn btn-accent btn-lg" id="home-cta">
-              Get in Touch
+            <Link href="/contact" className="btn" id="home-cta">
+              Contact
             </Link>
           </ScrollReveal>
         </div>
