@@ -1,0 +1,186 @@
+.hero {
+  padding-top: calc(var(--nav-height) + var(--space-5xl));
+  padding-bottom: var(--space-3xl);
+  background: var(--color-bg);
+  text-align: center;
+}
+
+.label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+}
+
+.title { margin-bottom: var(--space-xl); }
+.title em { font-style: italic; }
+
+/* Experience */
+.experience {
+  background: var(--color-bg-warm);
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.experienceContent {
+  padding: var(--space-xl) 0;
+}
+
+.experienceText {
+  font-family: var(--font-elegant);
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+/* Pricing */
+.pricing {
+  background: var(--color-bg);
+}
+
+.pricingTitle {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.pricingTitle em { font-style: italic; }
+
+.packageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.packageCard {
+  padding: var(--space-2xl);
+  border: 1px solid var(--color-border-light);
+  background: var(--color-bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.packageCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.packagePopular {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: white;
+  padding: 0.3rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.packageName {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.packagePrice {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.priceFrom {
+  font-family: var(--font-elegant);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.packageDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.packageFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+  flex-grow: 1;
+}
+
+.packageFeatures li {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.packageFeatures li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Booking */
+.booking {
+  background: var(--color-bg-warm);
+}
+
+.bookingText {
+  font-family: var(--font-elegant);
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.bookingText strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .experienceGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .packageGrid {
+    grid-template-columns: 1fr;
+  }
+}

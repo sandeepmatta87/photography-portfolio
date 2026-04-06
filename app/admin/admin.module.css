@@ -1,0 +1,318 @@
+.pageTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: var(--space-2xl);
+}
+
+.pageTitle em { font-style: italic; }
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.statCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: all var(--transition-fast);
+}
+
+.statCard:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.statSub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Section */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+/* Actions */
+.headerActions {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+}
+
+/* Table Card */
+.tableCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+}
+
+.tableCard table {
+  margin: 0;
+}
+
+/* Status Dot */
+.statusDot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.statusDot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Action Buttons */
+.actionBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+  padding: 0.25rem 0.5rem;
+}
+
+.actionBtn:hover {
+  color: var(--color-accent);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  padding: var(--space-xl);
+}
+
+.modal {
+  background: var(--color-white);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-2xl);
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: var(--space-xl);
+}
+
+.modalActions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-xl);
+}
+
+/* Filters */
+.filterBar {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.filterChip {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterChip:hover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.filterChipActive {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: var(--space-4xl) var(--space-xl);
+  color: var(--color-text-muted);
+}
+
+.emptyState p {
+  color: var(--color-text-muted);
+  font-family: var(--font-elegant);
+  font-size: 1.1rem;
+}
+
+/* Inline form row */
+.inlineRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+/* Invoice items */
+.itemRow {
+  display: grid;
+  grid-template-columns: 2fr 80px 120px 40px;
+  gap: var(--space-md);
+  align-items: end;
+  margin-bottom: var(--space-md);
+}
+
+.itemRow input {
+  width: 100%;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+.addItemBtn {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+/* Totals */
+.totals {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-sm);
+}
+
+.totalRow {
+  display: flex;
+  gap: var(--space-2xl);
+  font-size: 0.9rem;
+}
+
+.totalRow span:first-child {
+  color: var(--color-text-light);
+  min-width: 80px;
+  text-align: right;
+}
+
+.totalRowFinal {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-sm);
+}
+
+/* Quote Detail */
+.quoteDetail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.quoteField {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quoteField .fieldLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+.quoteField .fieldValue {
+  font-family: var(--font-elegant);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.quoteMessage {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inlineRow {
+    grid-template-columns: 1fr;
+  }
+
+  .itemRow {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,151 @@
+.hero {
+  padding-top: calc(var(--nav-height) + var(--space-5xl));
+  padding-bottom: var(--space-3xl);
+  background: var(--color-bg);
+}
+
+.label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+}
+
+.title {
+  margin-bottom: var(--space-xl);
+}
+
+.title em { font-style: italic; }
+
+/* Story */
+.story {
+  background: var(--color-bg-warm);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.storyImage {
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.storyContent {
+  padding: var(--space-2xl) 0;
+}
+
+.storyTitle {
+  margin-bottom: var(--space-sm);
+}
+
+.storyTitle em { font-style: italic; }
+
+.storyText {
+  font-family: var(--font-elegant);
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+/* Approach */
+.approach {
+  background: var(--color-bg);
+}
+
+.approachTitle {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.approachTitle em { font-style: italic; }
+
+.approachGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+}
+
+.approachCard {
+  padding: var(--space-2xl);
+  border: 1px solid var(--color-border-light);
+  background: var(--color-bg-card);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.approachCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.approachNumber {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.approachCardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: var(--space-md);
+  font-style: italic;
+}
+
+.approachCardText {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+/* Equipment */
+.equipment {
+  background: var(--color-bg-warm);
+}
+
+.equipText {
+  font-family: var(--font-elegant);
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  line-height: 2;
+  margin-bottom: var(--space-2xl);
+}
+
+.equipList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+}
+
+.equipDot {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .approachGrid {
+    grid-template-columns: 1fr;
+  }
+}
